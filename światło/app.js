@@ -185,7 +185,7 @@ async function main() {
 	function frame(){
 		angle = performance.now() / 1000 / 6 * 2 * Math.PI;
 		glMatrix.mat4.rotate(xRotationMatrix, identityMatrix, angle, [0, 1, 0]);
-		glMatrix.mat4.rotate(yRotationMatrix, identityMatrix, angle / 4, [1, 0, 0]);
+		glMatrix.mat4.rotate(yRotationMatrix, identityMatrix, 1.5 * Math.PI, [1, 0, 0]);
 		glMatrix.mat4.mul(worldMatrix, xRotationMatrix, yRotationMatrix);
 		gl.uniformMatrix4fv(matWorldUniformLocation, gl.FALSE, worldMatrix);
 
